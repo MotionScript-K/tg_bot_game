@@ -34,7 +34,9 @@ bot.on('message', async(msg) => {
 
 //http ручка
 app.post('/web-data', async (req, res) => {
-  const {queryId, userName, otvet} = req.body;
+  const queryId = req.body;
+  const userName = req.body;
+  const otvet = req.body;
   try {
     await bot.answerWebAppQuery(queryId,{
       type: 'article',
