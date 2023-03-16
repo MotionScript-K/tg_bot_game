@@ -34,19 +34,19 @@ bot.on('message', async(msg) => {
 
 //http ручка
 app.post('/web-data', async (req, res) => {
-  const {thisUser, thisName, thisOtvet} = req.body;
+  const {queryId, userName, otvet} = req.body;
   try {
-    await bot.answerWebAppQuery(thisUser,{
+    await bot.answerWebAppQuery(queryId,{
       type: 'article',
-      id: thisUser,
+      id: queryId,
       title: 'Успешное завершение',
-      input_message_content: {message_text: 'Поздравляем '+ thisName + thisOtvet}
+      input_message_content: {message_text: 'Поздравляем '+ userName + otvet}
     })
     return res.status(200).json({});
   }catch(e){
-    await bot.answerWebAppQuery(thisUser,{
+    await bot.answerWebAppQuery(queryId,{
       type: 'article',
-      id: thisUser,
+      id: queryId,
       title: 'Неудалось пройти',
       input_message_content: {message_text: 'Неудалось пройти' }
     })
