@@ -35,7 +35,6 @@ bot.on('message', async(msg) => {
 //http ручка
 app.post('/web-data', async (req, res) => {
   const {thisUser, thisName, thisOtvet} = req.body;
-
   try {
     await bot.answerWebAppQuery(thisUser,{
       type: 'article',
@@ -54,7 +53,7 @@ app.post('/web-data', async (req, res) => {
   }
   return res.status(500).json({});
 
-})
+});
 
 // запускаем сервер
 const PORT = 8000;
