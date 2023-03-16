@@ -34,9 +34,7 @@ bot.on('message', async(msg) => {
 
 //http ручка
 app.post('/web-data', async (req, res) => {
-  const queryId = req.body;
-  const userName = req.body;
-  const otvet = req.body;
+  const {queryId, userName, otvet} = req.body;
   try {
     await bot.answerWebAppQuery(queryId,{
       type: 'article',
@@ -46,15 +44,8 @@ app.post('/web-data', async (req, res) => {
     })
     return res.status(200).json({});
   }catch(e){
-    await bot.answerWebAppQuery(queryId,{
-      type: 'article',
-      id: queryId,
-      title: 'Неудалось пройти',
-      input_message_content: {message_text: 'Неудалось пройти' }
-    })
-  }
-  return res.status(500).json({});
-
+    return res.status(500).json({})
+    }
 });
 
 // запускаем сервер
