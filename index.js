@@ -1,6 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
-
-const token = '5641035298:AAGRif1G1MXaWug4wED3j_D9KWePqwOmMlU';
+require('dotenv').config();
+const token = process.env.TOKEN;
 const webAppUrl = 'https://visionary-frangipane-efddf1.netlify.app';
 
 const bot = new TelegramBot(token, {polling: true});
