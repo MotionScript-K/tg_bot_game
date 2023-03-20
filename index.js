@@ -19,8 +19,7 @@ bot.on('message', async(msg) => {
             ]
         }
     });
-  }else {await bot.sendMessage(chatId,'используйте команду /start')};
-   if(text === '/start@CreateAnimTextBot'){
-   web_app: {url: webAppUrl};
-   }
+  }
+    //else {await bot.sendMessage(chatId,'используйте команду /start')};
+
 });
