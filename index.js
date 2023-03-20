@@ -19,13 +19,14 @@ bot.on('message', async(msg) => {
             ]
         }
     });
-      await bot.sendMessage(5641035298,'Испытай удачу', {
+    else {
+              await bot.sendMessage(5641035298,'Испытай удачу', {
         reply_markup: {
             inline_keyboard:[
                 [{text: 'найди сертификат', web_app: {url: webAppUrl}}]
             ]
         }
   });
-    //else {await bot.sendMessage(chatId,'используйте команду /start')};
+    };
 
 });
