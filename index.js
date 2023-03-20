@@ -19,8 +19,6 @@ bot.on('message', async(msg) => {
             ]
         }
     });
-  } else {
-    await bot.sendMessage(chatId,"используйте команду /start")
   };
       
 });
