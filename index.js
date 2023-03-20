@@ -20,14 +20,6 @@ bot.on('message', async(msg) => {
             ]
         }
     });
-    else {
-        await bot.sendMessage(chatId2,'Испытай удачу', {
-        reply_markup: {
-            inline_keyboard:[
-                [{text: 'найди сертификат', web_app: {url: webAppUrl}}]
-            ]
-        }
-  });
-    };
+    }else{bot.sendMessage(chatId,'Испытай удачу')}
 
 });
