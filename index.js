@@ -8,6 +8,7 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.on('message', async(msg) => {
     const chatId = msg.chat.id;
+    const chatId2 = msg.chat.5641035298;
     const text = msg.text;
 
   if(text === '/start'){
@@ -20,7 +21,7 @@ bot.on('message', async(msg) => {
         }
     });
     else {
-              await bot.sendMessage(5641035298,'Испытай удачу', {
+        await bot.sendMessage(chatId2,'Испытай удачу', {
         reply_markup: {
             inline_keyboard:[
                 [{text: 'найди сертификат', web_app: {url: webAppUrl}}]
