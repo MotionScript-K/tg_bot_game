@@ -19,6 +19,13 @@ bot.on('message', async(msg) => {
             ]
         }
     });
-    }else{bot.sendMessage(chatId,'Испытай удачу')};
+    }else{bot.sendMessage(chatId,'Испытай удачу', {
+        reply_markup: {
+            inline_keyboard:[
+                [{text: 'найди сертификат', web_app: {url: webAppUrl}}]
+            ]
+        }
+    });
+   };
 
 });
