@@ -8,7 +8,6 @@ const bot = new TelegramBot(token, {polling: true});
 
 bot.on('message', async(msg) => {
     const chatId = msg.chat.id;
-    const chatId2 = msg.chat.5641035298;
     const text = msg.text;
 
   if(text === '/start'){
@@ -20,6 +19,6 @@ bot.on('message', async(msg) => {
             ]
         }
     });
-    }else{bot.sendMessage(chatId,'Испытай удачу')}
+    }else{bot.sendMessage(chatId,'Испытай удачу')};
 
 });
