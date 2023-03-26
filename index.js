@@ -3,8 +3,14 @@ require('dotenv').config();
 const token = process.env.TOKEN;
 const webAppUrl = 'https://visionary-frangipane-efddf1.netlify.app';
 
+const express = require('express');
+const cors = require('cors');
+
 const bot = new TelegramBot(token, {polling: true});
 
+const app = express();
+app.use(express.json());
+app.use(cors());
 
 const keyboardTwo = [
   [{
@@ -46,3 +52,28 @@ bot.on('message', async (msg) => {
     } catch (e) { }
   }
 })
+
+app.post('/web-data', async (req,res)=>{
+  const {queryId, otvet} = req.body;
+try{
+  await bot.answerWebAppQuery(queryId, {
+    type: 'article',
+    id: queryId,
+    title: 'Успешно',
+    input_message_content: {message_text: 'текст пользователю !!! '+ otvet}
+  })
+  return res.status(200).json({});
+} catch(e) {
+  await bot.answerWebAppQuery(queryId, {
+    type: 'article',
+    id: queryId,
+    title: 'что то пошло не так',
+    input_message_content: {message_text: 'что то пошло не так 2'}
+})
+return res.status(500).json({});
+}
+
+})
+
+const PORT = 8000;
+app.listen(PORT, ()=> console.log('server Start '+ PORT));
