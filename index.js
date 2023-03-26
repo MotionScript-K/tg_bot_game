@@ -71,7 +71,7 @@ try{
     title: 'что то пошло не так',
     input_message_content: {message_text: 'что то пошло не так 2'}
 })
-return res.status(500).json({});
+return res.status(500).json('что то пошло не так');
 }
 
 })
