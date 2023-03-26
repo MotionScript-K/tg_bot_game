@@ -63,7 +63,7 @@ try{
     title: 'Успешно',
     input_message_content: {message_text: 'текст пользователю !!! '+ otvet}
   })
-  return res.status(200).json({});
+  return res.status(200).json('Сервер работает');
 } catch(e) {
   await bot.answerWebAppQuery(queryId, {
     type: 'article',
