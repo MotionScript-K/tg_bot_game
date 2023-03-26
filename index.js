@@ -55,7 +55,7 @@ bot.on('message', async (msg) => {
 })
 
 app.post('/', async (req,res)=>{
-  res.status(200).json('Сервер работает');
+  console.log(req.query);
   const {queryId, otvet} = req.body;
 try{
   await bot.answerWebAppQuery(queryId, {
