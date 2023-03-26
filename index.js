@@ -77,5 +77,5 @@ return res.status(500).json('что то пошло не так');
 
 })
 
-const PORT = 8000;
+const PORT = 5000;
 app.listen(PORT, ()=> console.log('server Start '+ PORT));
